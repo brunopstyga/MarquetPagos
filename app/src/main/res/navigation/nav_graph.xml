@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/amountFragment">
+    <fragment
+        android:id="@+id/amountFragment"
+        android:name="com.mercadopago.ui.fragment.AmountFragment"
+        android:label="AmountFragment" >
+        <action
+            android:id="@+id/action_amountFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.mercadopago.ui.fragment.MethodFragment"
+        android:label="CardFragment" >
+        <action
+            android:id="@+id/action_cardFragment_to_issuerFragment"
+            app:destination="@id/issuerFragment" />
+        <action
+            android:id="@+id/action_cardFragment_to_installmentsFragment"
+            app:destination="@id/installmentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/issuerFragment"
+        android:name="com.mercadopago.ui.fragment.IssuerFragment"
+        android:label="IssuerFragment" >
+        <action
+            android:id="@+id/action_issuerFragment_to_installmentsFragment"
+            app:destination="@id/installmentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/installmentsFragment"
+        android:name="com.mercadopago.ui.fragment.InstallmentsFragment"
+        android:label="InstallmentsFragment" >
+        <action
+            android:id="@+id/action_installmentsFragment_to_inputDataFragment"
+            app:destination="@id/inputDataFragment" />
+        <action
+            android:id="@+id/action_installmentsFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputDataFragment"
+        android:name="com.mercadopago.ui.fragment.InputDataFragment"
+        android:label="InputDataFragment" >
+        <action
+            android:id="@+id/action_inputDataFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.mercadopago.ui.fragment.SummaryFragment"
+        android:label="SummaryFragment" />
+</navigation>
